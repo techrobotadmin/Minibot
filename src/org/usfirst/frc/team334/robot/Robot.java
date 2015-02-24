@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 
 public class Robot extends IterativeRobot {
 	
-	DriveTrain drive;
+	public static DriveTrain drive;
 	
 	@Override
 	public void robotInit() {
@@ -22,12 +22,7 @@ public class Robot extends IterativeRobot {
 	
 	@Override
 	public void teleopPeriodic() {
-		drive.loopTime.start();
 		
-		
-		
-		drive.loopTime.stop();
-		System.out.println(drive.loopTime.get());
 	}
 
 	
