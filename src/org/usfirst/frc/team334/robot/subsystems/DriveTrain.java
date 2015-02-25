@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.VictorSP;
 
 /**
@@ -27,8 +26,6 @@ public class DriveTrain {
 	Gyro gyro;
 
 	Encoders encoder;
-
-	public Timer loopTime;
 
 	public DriveTrain(Robot robot) {
 		this.robot = robot;
@@ -50,7 +47,6 @@ public class DriveTrain {
 
 		orientationPID.setSetpoint(0);
 
-		loopTime = new Timer();
 	}
 
 	public void drive(double speed) {
