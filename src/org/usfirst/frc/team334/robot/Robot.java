@@ -3,6 +3,7 @@ package org.usfirst.frc.team334.robot;
 
 import org.usfirst.frc.team334.robot.auton.AutonOne;
 import org.usfirst.frc.team334.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team334.robot.subsystems.Elevator;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -12,12 +13,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	
 	public DriveTrain drive;
+	public Elevator elevator;
 	SendableChooser chooser = new SendableChooser();
 	
 	@Override
 	public void robotInit() {
 		super.robotInit();
 		drive = new DriveTrain(this);
+		elevator = new Elevator(this);
 		chooser.addDefault("Default", null);
 		chooser.addObject("Auton One", new AutonOne(this));
 		
@@ -35,7 +38,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
-		
 	}
 	
 	@Override

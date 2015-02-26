@@ -43,6 +43,11 @@ public class AutonOne extends Command {
 				stage++;
 			}
 			break;
+		
+		case 4:
+			if(robot.elevator.setElevatorLevel(.50)) {
+				stage ++;
+			}
 		}
 	}
 

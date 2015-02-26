@@ -11,9 +11,6 @@ import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
 
-/**
- *
- */
 public class DriveTrain {
 
 	Robot robot;
@@ -41,12 +38,11 @@ public class DriveTrain {
 				Constants.rightEncoderB), new Encoder(Constants.rightEncoderA,
 				Constants.rightEncoderB));
 
-		orientationPID = new PIDController(DashboardUtils.getStraightP(),
-				DashboardUtils.getStraightI(), DashboardUtils.getStraightD(),
+		orientationPID = new PIDController(DashboardUtils.getOrientationP(),
+				DashboardUtils.getOrientationI(), DashboardUtils.getOrientationD(),
 				gyro, leftVictors);
 
 		orientationPID.setSetpoint(0);
-
 	}
 
 	public void drive(double speed) {
