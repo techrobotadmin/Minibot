@@ -121,7 +121,6 @@ public class DriveTrain {
 			victorA.disable();
 			victorB.disable();
 		}
-
 	}
 
 	class Encoders implements PIDSource {

@@ -9,7 +9,9 @@ public class AutonOne extends Command {
 
 	Robot robot;
 	int stage;
-	
+
+	boolean finished;
+
 	public AutonOne(Robot robot) {
 		this.robot = robot;
 	}
@@ -17,6 +19,7 @@ public class AutonOne extends Command {
 	@Override
 	protected void initialize() {
 		robot.drive = new DriveTrain(robot);
+		finished = false;
 	}
 
 	@Override
@@ -43,17 +46,21 @@ public class AutonOne extends Command {
 				stage++;
 			}
 			break;
-		
+
 		case 4:
-			if(robot.elevator.setElevatorLevel(.50)) {
-				stage ++;
+			if (robot.elevator.setElevatorLevel(.50)) {
+				stage++;
 			}
+		case 5:
+			finished = true;
+			stage++;
+			break;
 		}
 	}
 
 	@Override
 	protected boolean isFinished() {
-		return false;
+		return finished;
 	}
 
 	@Override
